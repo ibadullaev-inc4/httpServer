@@ -24,7 +24,7 @@ jobs:
       - uses: docker/metadata-action@v5
         id: meta
         with:
-          images: httpserver
+          images: ghcr.io/ibadullaev-inc4/httpserver
           tags: |
             type=ref,event=tag
 
