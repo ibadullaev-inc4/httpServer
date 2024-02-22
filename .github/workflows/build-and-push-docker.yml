@@ -24,9 +24,8 @@ jobs:
       - uses: docker/metadata-action@v4
         id: meta
         with:
-          images: ghcr.io/ibadullaev-inc4/httpServer
+          images: ghcr.io/ibadullaev-inc4/httpserver
           tags: |
-            latest
             type=ref,event=tag
 
       - name: Build and push
