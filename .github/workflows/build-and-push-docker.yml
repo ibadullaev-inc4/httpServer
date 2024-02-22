@@ -27,6 +27,7 @@ jobs:
           images: ghcr.io/ibadullaev-inc4/httpServer
           tags: |
             latest
+            type=ref
 
       - name: Build and push
         uses: docker/build-push-action@v5
