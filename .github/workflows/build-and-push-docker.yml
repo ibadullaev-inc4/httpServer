@@ -1,4 +1,4 @@
-name: build and push u2c docker image
+name: build and push httpServer docker image
 
 on:
   push:
