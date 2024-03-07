@@ -28,8 +28,14 @@ class Store(MethodView):
     @blp.arguments(StoreUpdateSchema)
     @blp.response(200, StoreSchema)
     def put(self, store_data, store_id):
-        store = StoreModel.query.get_or_404(store_id)
-        raise NotImplementedError("Updating a store is not implemented")
+        store = StoreModel.query.get(store_id)
+        if store:
+            store.name = store_data["name"]
+        else:
+            store = StoreModel(**store_data)
+        db.session.add(store)
+        db.session.commit()
+        return store
 
 @blp.route("/store")
 class StoreList(MethodView):
